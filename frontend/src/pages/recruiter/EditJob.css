@@ -1,0 +1,564 @@
+/* =========================
+   PAGE
+========================= */
+
+.edit-job-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  color: #111827;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.edit-job-navbar {
+  min-height: 72px;
+
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 6%;
+}
+
+.edit-job-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.edit-job-brand h2 {
+  margin: 0;
+
+  color: #2563eb;
+
+  font-size: 24px;
+}
+
+.edit-job-brand span {
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.edit-job-nav-links {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-job-nav-links button {
+  border: none;
+
+  background: transparent;
+
+  color: #6b7280;
+
+  padding: 10px 14px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.edit-job-nav-links button:hover,
+.edit-job-nav-links button.active {
+  background: #eff6ff;
+
+  color: #2563eb;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.edit-job-container {
+  width: 88%;
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  padding: 45px 0 70px;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.edit-job-heading {
+  margin-bottom: 30px;
+}
+
+.edit-job-heading > span {
+  color: #2563eb;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.edit-job-heading h1 {
+  margin: 7px 0;
+
+  font-size: 34px;
+
+  font-weight: 700;
+}
+
+.edit-job-heading p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 15px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.edit-job-card {
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  padding: 35px;
+
+  box-shadow:
+    0 4px 15px rgba(15, 23, 42, 0.05);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.edit-form-section {
+  padding-bottom: 30px;
+
+  margin-bottom: 30px;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.edit-form-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.edit-form-section h2 {
+  margin: 0 0 5px;
+
+  font-size: 19px;
+}
+
+.edit-section-description {
+  margin: 0 0 22px;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.edit-form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  margin-bottom: 20px;
+}
+
+.edit-form-group:last-child {
+  margin-bottom: 0;
+}
+
+.edit-form-group label {
+  margin-bottom: 8px;
+
+  color: #374151;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.edit-form-group input,
+.edit-form-group select,
+.edit-form-group textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px 13px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition: 0.2s;
+}
+
+.edit-form-group input:focus,
+.edit-form-group select:focus,
+.edit-form-group textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.edit-form-group textarea {
+  resize: vertical;
+
+  min-height: 160px;
+
+  font-family: inherit;
+
+  line-height: 1.6;
+}
+
+.edit-form-group input::placeholder,
+.edit-form-group textarea::placeholder {
+  color: #9ca3af;
+}
+
+.edit-form-group small {
+  margin-top: 6px;
+
+  color: #9ca3af;
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   ROW
+========================= */
+
+.edit-form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status-section {
+  padding-bottom: 25px;
+}
+
+.status-content {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.status-content .edit-section-description {
+  margin-bottom: 0;
+}
+
+
+/* Toggle */
+
+.status-toggle {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+
+  position: relative;
+}
+
+.status-toggle input {
+  display: none;
+}
+
+.toggle-slider {
+  width: 45px;
+  height: 24px;
+
+  background: #d1d5db;
+
+  border-radius: 20px;
+
+  position: relative;
+
+  transition: 0.2s;
+}
+
+.toggle-slider::after {
+  content: "";
+
+  width: 18px;
+  height: 18px;
+
+  background: #ffffff;
+
+  border-radius: 50%;
+
+  position: absolute;
+
+  top: 3px;
+  left: 3px;
+
+  transition: 0.2s;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.status-toggle input:checked + .toggle-slider {
+  background: #2563eb;
+}
+
+.status-toggle input:checked + .toggle-slider::after {
+  transform: translateX(21px);
+}
+
+.toggle-text {
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #374151;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.edit-job-error {
+  margin-top: 25px;
+
+  padding: 13px 15px;
+
+  border: 1px solid #fecaca;
+
+  border-radius: 8px;
+
+  background: #fef2f2;
+
+  color: #b91c1c;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.edit-job-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  margin-top: 30px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid #e5e7eb;
+}
+
+.edit-cancel-btn,
+.edit-save-btn {
+  padding: 12px 22px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.edit-cancel-btn {
+  background: #f3f4f6;
+
+  color: #374151;
+}
+
+.edit-cancel-btn:hover {
+  background: #e5e7eb;
+}
+
+.edit-save-btn {
+  background: #2563eb;
+
+  color: #ffffff;
+}
+
+.edit-save-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+}
+
+.edit-save-btn:disabled {
+  background: #93c5fd;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.edit-job-loading {
+  min-height: 350px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #6b7280;
+}
+
+.edit-loading-spinner {
+  width: 34px;
+  height: 34px;
+
+  border: 3px solid #e5e7eb;
+
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation: editSpin 0.8s linear infinite;
+
+  margin-bottom: 12px;
+}
+
+@keyframes editSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+  .edit-job-navbar {
+    padding: 15px 20px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .edit-job-nav-links {
+    width: 100%;
+
+    overflow-x: auto;
+  }
+
+  .edit-job-nav-links button {
+    white-space: nowrap;
+  }
+
+  .edit-job-container {
+    width: 92%;
+
+    padding-top: 30px;
+  }
+
+  .edit-job-heading h1 {
+    font-size: 28px;
+  }
+
+  .edit-job-card {
+    padding: 22px;
+  }
+
+  .edit-form-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .status-content {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .edit-job-actions {
+    flex-direction: column-reverse;
+  }
+
+  .edit-cancel-btn,
+  .edit-save-btn {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 450px) {
+
+  .edit-job-card {
+    padding: 18px;
+  }
+
+  .edit-job-heading h1 {
+    font-size: 25px;
+  }
+}

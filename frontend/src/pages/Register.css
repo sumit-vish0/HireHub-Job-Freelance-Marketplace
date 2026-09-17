@@ -1,0 +1,44 @@
+.register-container {
+  min-height: 650px;
+}
+
+/* Register page uses the same
+   authentication layout as Login */
+
+.register-container .auth-card {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+.register-container .auth-header {
+  margin-bottom: 24px;
+}
+
+/* Slightly smaller spacing because
+   register has more fields */
+
+.register-container .form-group {
+  margin-bottom: 14px;
+}
+
+.register-container .auth-submit {
+  margin-top: 5px;
+}
+
+/* Mobile */
+
+@media (max-width: 800px) {
+  .register-container {
+    min-height: auto;
+  }
+
+  .register-container .auth-card {
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-container .auth-card {
+    padding: 30px 22px;
+  }
+}

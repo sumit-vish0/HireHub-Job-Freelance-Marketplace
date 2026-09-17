@@ -1,0 +1,264 @@
+.interviews-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+.interviews-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 45px 0 60px;
+}
+
+/* HEADER */
+
+.interviews-header {
+  margin-bottom: 30px;
+}
+
+.interviews-label {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.interviews-header h1 {
+  color: #111827;
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.interviews-header > p:last-child {
+  color: #6b7280;
+  font-size: 15px;
+}
+
+/* LIST */
+
+.interviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* CARD */
+
+.interview-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+
+  padding: 22px;
+
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: 20px;
+  align-items: center;
+
+  transition: 0.2s;
+}
+
+.interview-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+/* DATE */
+
+.interview-date-box {
+  width: 62px;
+  height: 68px;
+
+  border-radius: 10px;
+
+  background: #eff6ff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.interview-date-box span {
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.interview-date-box strong {
+  color: #1d4ed8;
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+/* INFORMATION */
+
+.interview-info h2 {
+  color: #111827;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.interview-info > p {
+  color: #6b7280;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.interview-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.interview-details span {
+  color: #4b5563;
+  font-size: 13px;
+}
+
+.interview-notes {
+  margin-top: 10px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+/* STATUS */
+
+.interview-status-section {
+  align-self: start;
+}
+
+.interview-status {
+  display: inline-block;
+
+  padding: 7px 13px;
+
+  border-radius: 20px;
+
+  background: #f5f3ff;
+  color: #7c3aed;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* EMPTY */
+
+.no-interviews {
+  background: white;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+
+  text-align: center;
+
+  padding: 75px 20px;
+}
+
+.empty-interview-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.no-interviews h2 {
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.no-interviews p {
+  color: #6b7280;
+  margin-bottom: 22px;
+}
+
+.browse-jobs-btn {
+  border: none;
+
+  background: #2563eb;
+  color: white;
+
+  padding: 11px 18px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.browse-jobs-btn:hover {
+  background: #1d4ed8;
+}
+
+/* LOADING */
+
+.interviews-loading {
+  background: white;
+  border-radius: 12px;
+
+  padding: 60px;
+
+  text-align: center;
+
+  color: #6b7280;
+}
+
+/* ERROR */
+
+.interviews-error {
+  background: #fef2f2;
+
+  border: 1px solid #fecaca;
+
+  color: #dc2626;
+
+  padding: 14px;
+
+  border-radius: 8px;
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+  .interviews-container {
+    width: 92%;
+    padding-top: 30px;
+  }
+
+  .interviews-header h1 {
+    font-size: 27px;
+  }
+
+  .interview-card {
+    grid-template-columns: 60px 1fr;
+  }
+
+  .interview-status-section {
+    grid-column: 2;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .interview-card {
+    grid-template-columns: 1fr;
+  }
+
+  .interview-date-box {
+    width: 62px;
+  }
+
+  .interview-status-section {
+    grid-column: auto;
+  }
+
+  .interview-details {
+    flex-direction: column;
+    gap: 7px;
+  }
+
+}

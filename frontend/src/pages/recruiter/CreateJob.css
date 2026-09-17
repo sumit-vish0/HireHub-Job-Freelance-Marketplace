@@ -1,0 +1,431 @@
+/* =========================
+   PAGE
+========================= */
+
+.create-job-page {
+    min-height: 100vh;
+    background: #f5f7fb;
+    color: #111827;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.create-job-navbar {
+    min-height: 72px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+}
+
+.create-job-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.create-job-brand h2 {
+    margin: 0;
+
+    color: #2563eb;
+
+    font-size: 24px;
+}
+
+.create-job-brand span {
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+.create-job-nav-links {
+    display: flex;
+    gap: 8px;
+}
+
+.create-job-nav-links button {
+    border: none;
+
+    background: transparent;
+
+    color: #6b7280;
+
+    padding: 10px 14px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+.create-job-nav-links button:hover {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.create-job-container {
+    width: 88%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 45px 0 70px;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.create-job-heading {
+    margin-bottom: 30px;
+}
+
+.create-job-heading span {
+    color: #2563eb;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.create-job-heading h1 {
+    margin: 7px 0;
+
+    font-size: 34px;
+
+    font-weight: 700;
+}
+
+.create-job-heading p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   FORM CARD
+========================= */
+
+.create-job-card {
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 4px 15px rgba(15, 23, 42, 0.05);
+}
+
+
+/* =========================
+   FORM SECTION
+========================= */
+
+.form-section {
+    padding-bottom: 30px;
+
+    margin-bottom: 30px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+
+    margin-bottom: 0;
+
+    padding-bottom: 0;
+}
+
+.form-section h2 {
+    margin: 0 0 5px;
+
+    font-size: 19px;
+
+    color: #111827;
+}
+
+.form-section-description {
+    margin: 0 0 22px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    padding: 12px 13px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+
+    min-height: 150px;
+
+    font-family: inherit;
+
+    line-height: 1.6;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9ca3af;
+}
+
+.form-group small {
+    margin-top: 6px;
+
+    color: #9ca3af;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   FORM ROW
+========================= */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.create-job-error {
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+
+    color: #b91c1c;
+
+    padding: 13px 15px;
+
+    border-radius: 8px;
+
+    margin-top: 25px;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.create-job-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+.cancel-job-btn,
+.submit-job-btn {
+    border: none;
+
+    padding: 12px 22px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.cancel-job-btn {
+    background: #f3f4f6;
+
+    color: #374151;
+}
+
+.cancel-job-btn:hover {
+    background: #e5e7eb;
+}
+
+.submit-job-btn {
+    background: #2563eb;
+
+    color: #ffffff;
+}
+
+.submit-job-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+.submit-job-btn:disabled {
+    background: #93c5fd;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .create-job-navbar {
+        padding: 15px 20px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .create-job-nav-links {
+        width: 100%;
+
+        overflow-x: auto;
+    }
+
+    .create-job-nav-links button {
+        white-space: nowrap;
+    }
+
+    .create-job-container {
+        width: 92%;
+
+        padding-top: 30px;
+    }
+
+    .create-job-heading h1 {
+        font-size: 28px;
+    }
+
+    .create-job-card {
+        padding: 22px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .create-job-actions {
+        flex-direction: column-reverse;
+    }
+
+    .cancel-job-btn,
+    .submit-job-btn {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .create-job-card {
+        padding: 18px;
+    }
+
+    .create-job-heading h1 {
+        font-size: 25px;
+    }
+}
