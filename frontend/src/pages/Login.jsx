@@ -23,7 +23,7 @@ function Login() {
     setLoading(true);
 
     try {
-      const response = await api.post("accounts/login/", {
+      const response = await api.post("/auth/login/", {
         username,
         password,
       });
