@@ -35,7 +35,7 @@ ALLOWED_HOSTS = os.getenv(
 
 CSRF_TRUSTED_ORIGINS = [
     "https://hirehub-job-freelance-marketplace.onrender.com",
-     "https://hirehub-frontend.vercel.app",
+    "https://hire-hub-job-freelance-marketplace.vercel.app",
 ]
 
 
@@ -186,7 +186,7 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    "https://hirehub-frontend.vercel.app",
+    "https://hire-hub-job-freelance-marketplace.vercel.app",
 ]
 
 MEDIA_URL = "/media/"
