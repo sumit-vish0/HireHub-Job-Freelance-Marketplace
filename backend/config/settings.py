@@ -28,15 +28,17 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
-ALLOWED_HOSTS = [
-    "hirehub-job-freelance-marketplace.onrender.com",
-    "localhost",
-    "127.0.0.1",
-]
+ALLOWED_HOSTS = os.getenv(
+    "ALLOWED_HOSTS",
+    "hirehub-job-freelance-marketplace.onrender.com,localhost,127.0.0.1"
+).split(",")
 
 CSRF_TRUSTED_ORIGINS = [
     "https://hirehub-job-freelance-marketplace.onrender.com",
+     "https://hirehub-frontend.vercel.app",
 ]
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -184,8 +186,7 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
+    "https://hirehub-frontend.vercel.app",
 ]
 
 MEDIA_URL = "/media/"
