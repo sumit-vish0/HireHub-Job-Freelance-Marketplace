@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -28,15 +29,44 @@ function Login() {
         password,
       });
 
-      const { access, refresh } = response.data.tokens;
-      const user = response.data.user;
+      /*
+       * Expected backend response:
+       *
+       * {
+       *   "tokens": {
+       *     "access": "...",
+       *     "refresh": "..."
+       *   },
+       *   "user": {
+       *     "id": 1,
+       *     "username": "candidate1",
+       *     "email": "...",
+       *     "role": "CANDIDATE"
+       *   }
+       * }
+       */
 
+      const { tokens, user } = response.data;
+
+      if (!tokens?.access || !tokens?.refresh) {
+        throw new Error("Invalid token response from server.");
+      }
+
+      if (!user) {
+        throw new Error("User information missing from server.");
+      }
+
+      const { access, refresh } = tokens;
+
+      // Save authentication data
       localStorage.setItem("accessToken", access);
       localStorage.setItem("refreshToken", refresh);
       localStorage.setItem("user", JSON.stringify(user));
 
+      // Update AuthContext
       login(user, access, refresh);
 
+      // Redirect according to user role
       if (user.role === "CANDIDATE") {
         navigate("/candidate/dashboard");
       } else if (user.role === "RECRUITER") {
@@ -44,8 +74,9 @@ function Login() {
       } else {
         navigate("/login");
       }
+
     } catch (error) {
-      console.error(error);
+      console.error("Login error:", error);
 
       if (error.response?.data) {
         const data = error.response.data;
@@ -54,9 +85,13 @@ function Login() {
           setError(data);
         } else if (data.detail) {
           setError(data.detail);
+        } else if (data.non_field_errors) {
+          setError(data.non_field_errors[0]);
         } else {
           setError("Invalid username or password.");
         }
+      } else if (error.message) {
+        setError(error.message);
       } else {
         setError("Unable to connect to the server.");
       }
@@ -68,6 +103,7 @@ function Login() {
   return (
     <div className="auth-page">
       <div className="auth-container">
+
         {/* Left Side */}
 
         <div className="auth-info">
@@ -84,6 +120,7 @@ function Login() {
           </p>
 
           <div className="auth-features">
+
             <div className="auth-feature">
               <span>✓</span>
               Discover relevant job opportunities
@@ -98,22 +135,31 @@ function Login() {
               <span>✓</span>
               Track your applications
             </div>
+
           </div>
         </div>
 
         {/* Login Card */}
 
         <div className="auth-card">
+
           <div className="auth-header">
             <h2>Welcome back</h2>
             <p>Login to your Hire-Hub account</p>
           </div>
 
-          {error && <div className="alert alert-error">{error}</div>}
+          {error && (
+            <div className="alert alert-error">
+              {error}
+            </div>
+          )}
 
           <form onSubmit={handleLogin}>
+
             <div className="form-group">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="username">
+                Username
+              </label>
 
               <input
                 id="username"
@@ -126,7 +172,9 @@ function Login() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">
+                Password
+              </label>
 
               <input
                 id="password"
@@ -145,13 +193,18 @@ function Login() {
             >
               {loading ? "Logging in..." : "Login"}
             </button>
+
           </form>
 
           <div className="auth-footer">
             <p>
-              Don't have an account? <Link to="/register">Create Account</Link>
+              Don't have an account?{" "}
+              <Link to="/register">
+                Create Account
+              </Link>
             </p>
           </div>
+
         </div>
       </div>
     </div>
@@ -159,3 +212,4 @@ function Login() {
 }
 
 export default Login;
+

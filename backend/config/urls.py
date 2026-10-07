@@ -15,35 +15,59 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+"""
+URL configuration for config project.
+"""
+
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+
 from rest_framework_simplejwt.views import (
     TokenRefreshView,
     TokenVerifyView,
 )
 
+from accounts.views import LoginView
+
 urlpatterns = [
+    # Admin
     path("admin/", admin.site.urls),
+    # Accounts
     path("api/accounts/", include("accounts.urls")),
-    path("api/", include("job.urls")),
-    path("api/", include("applications.urls")),
-    path("api/notifications/", include("notifications.urls")),
+    # Custom Login
+    path(
+        "api/auth/login/",
+        LoginView.as_view(),
+        name="login",
+    ),
+    # JWT Refresh
     path(
         "api/auth/token/refresh/",
         TokenRefreshView.as_view(),
         name="token-refresh",
     ),
+    # JWT Verify
     path(
         "api/auth/token/verify/",
         TokenVerifyView.as_view(),
         name="token-verify",
     ),
-    path(
-    "api/",
-    include("companies.urls")
-),
+    # Jobs
+    path("api/", include("job.urls")),
+    # Applications
+    path("api/", include("applications.urls")),
+    # Notifications
+    path("api/notifications/", include("notifications.urls")),
+    # Companies
+    path("api/", include("companies.urls")),
 ]
+
+
+# Media files during development
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT,
+    )
