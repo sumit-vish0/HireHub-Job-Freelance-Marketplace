@@ -75,9 +75,7 @@ INSTALLED_APPS = [
 # =========================================================
 
 MIDDLEWARE = [
-    # Keep CORS middleware near the beginning.
     "corsheaders.middleware.CorsMiddleware",
-
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
