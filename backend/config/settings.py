@@ -31,14 +31,21 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # DEBUG=False
 DEBUG = os.getenv("DEBUG", "False").strip().lower() == "true"
 
+
 ALLOWED_HOSTS = [
     host.strip()
     for host in os.getenv(
         "ALLOWED_HOSTS",
-        "localhost,127.0.0.1"
+        "localhost,127.0.0.1",
     ).split(",")
     if host.strip()
 ]
+
+# Render automatically provides this hostname.
+render_hostname = os.getenv("RENDER_EXTERNAL_HOSTNAME")
+if render_hostname and render_hostname not in ALLOWED_HOSTS:
+    ALLOWED_HOSTS.append(render_hostname)
+
 
 
 # =========================================================
@@ -269,14 +276,29 @@ SIMPLE_JWT = {
 }
 
 
+
 # =========================================================
 # CORS
 # =========================================================
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
+    origin.strip().rstrip("/")
+    for origin in os.getenv(
+        "CORS_ALLOWED_ORIGINS",
+        "http://localhost:5173,http://127.0.0.1:5173",
+    ).split(",")
+    if origin.strip()
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip().rstrip("/")
+    for origin in os.getenv(
+        "CSRF_TRUSTED_ORIGINS",
+        "http://localhost:5173,http://127.0.0.1:5173",
+    ).split(",")
+    if origin.strip()
+]
+
 
 
 # =========================================================
